@@ -30,12 +30,14 @@ const deadline = document.getElementById("deadline");
 // create end date
 
 const endDate = new Date("27 Jul 2022 19:00:00");
+console.log(endDate);
 
 // extract end date text into variables
 const endYear = endDate.getFullYear();
 const endMonth = months[endDate.getMonth()];
-const endDayName = weekdays[endDate.getDay()];
-const endDay = endDate.getDay();
+const endWeekday = endDate.getDay();
+const endDayName = weekdays[endWeekday];
+const endDay = endDate.getDate();
 const endHour = endDate.getHours();
 const endMinute = endDate.getMinutes();
 const endSecond = endDate.getSeconds();
@@ -57,10 +59,7 @@ const secondsElement = document.querySelector(".seconds");
 
 function remainingTime() {
   const now = new Date();
-  console.log(`hoy ${now}`);
   const remainingTimeInMs = endDate - now;
-  console.log(now);
-  console.log(remainingTimeInMs);
 
   const oneMinuteInMs = 60 * 1000;
   const oneHourInMs = 60 * oneMinuteInMs;
@@ -68,7 +67,6 @@ function remainingTime() {
 
   let remainingDays = Math.floor(remainingTimeInMs / oneDayInMs);
 
-  console.log(`quedan ${remainingTimeInMs / oneDayInMs} dias`);
   let remainingHours = Math.floor(
     (remainingTimeInMs % oneDayInMs) / oneHourInMs
   );
@@ -76,9 +74,9 @@ function remainingTime() {
     (remainingTimeInMs % oneHourInMs) / oneMinuteInMs
   );
   let remainingSeconds = Math.floor((remainingTimeInMs % oneMinuteInMs) / 1000);
-  console.log(
-    `Quedan ${remainingDays} dias, ${remainingHours} horas, ${remainingMinutes} minutos y ${remainingSeconds} segundos para que termine la Hackathon`
-  );
+  // console.log(
+  //   `Quedan ${remainingDays} dias, ${remainingHours} horas, ${remainingMinutes} minutos y ${remainingSeconds} segundos para que termine la Hackathon`
+  // );
 
   return {
     remainingDays,
