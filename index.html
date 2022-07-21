@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ES">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            montserrat: ["Montserrat"],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-montserrat">
+    <nav></nav>
+    <div
+      id="timer"
+      class="flex flex-col items-center mx-6 text-center space-y-7"
+    >
+      <div id="img" class="w-64 h-64">
+        <img
+          src="https://img.freepik.com/free-vector/cute-astronaut-riding-rocket-waving-hand-cartoon-icon-illustration-science-technology-icon-concept_138676-2130.jpg?t=st=1658078768~exp=1658079368~hmac=3e8623439cb5cb541dc007fadc36be551a775d04b3d7126f90201b6fc81c5dd5&w=826"
+          alt="a spaceman on a rocket"
+        />
+      </div>
+      <div id="anunce">
+        <p class="text-3xl">Cuenta regresiva para el Demo Day</p>
+        <p id="ends-text" class="text-md font-bold my-4">
+          Lorem ipsum dolor sit amet consectetur.
+        </p>
+        <p>
+          Recuerda que hay tiempo para enviar el repositorio de GitHub hasta las
+          16:00 horas.
+        </p>
+      </div>
+      <div id="deadline" class="flex flex-row space-x-5 text-center">
+        <!-- days -->
+        <div class="w-16 h-16 bg-gray-900 p-1">
+          <p class="days text-white font-bold text-xl">4</p>
+          <p class="text-white text-xsm">Días</p>
+        </div>
+        <!-- hours -->
+        <div class="w-16 h-16 bg-gray-900 p-1">
+          <p class="hours text-white font-bold text-xl">13</p>
+          <p class="text-white text-xsm">Horas</p>
+        </div>
+        <!-- minutes -->
+        <div class="w-16 h-16 bg-gray-900 p-1">
+          <p class="minutes text-white font-bold text-xl">48</p>
+          <p class="text-white text-xsm">Min</p>
+        </div>
+        <!-- seconds -->
+        <div class="w-16 h-16 bg-gray-900 p-1">
+          <p class="seconds text-white font-bold text-xl">06</p>
+          <p class="text-white text-xsm">Seg</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
