@@ -27,9 +27,8 @@ const weekdays = [
 const endsText = document.getElementById("ends-text");
 const deadline = document.getElementById("deadline");
 
-// create end date
-
-const endDate = new Date("27 Jul 2022 19:00:00");
+// create end date in English
+const endDate = new Date("24 Aug 2022 19:00:00");
 console.log(endDate);
 
 // extract end date text into variables
@@ -74,9 +73,6 @@ function remainingTime() {
     (remainingTimeInMs % oneHourInMs) / oneMinuteInMs
   );
   let remainingSeconds = Math.floor((remainingTimeInMs % oneMinuteInMs) / 1000);
-  // console.log(
-  //   `Quedan ${remainingDays} dias, ${remainingHours} horas, ${remainingMinutes} minutos y ${remainingSeconds} segundos para que termine la Hackathon`
-  // );
 
   return {
     remainingDays,
@@ -87,7 +83,7 @@ function remainingTime() {
   };
 }
 
-const countDown = setInterval(() => {
+const countDown = setInterval(function () {
   const {
     remainingDays,
     remainingHours,
@@ -100,7 +96,11 @@ const countDown = setInterval(() => {
   minutesElement.innerHTML = remainingMinutes;
   secondsElement.innerHTML = remainingSeconds;
 
-  if (remainingTimeInMs <= 1000) {
+  if (remainingTimeInMs <= 0) {
     clearInterval(countDown);
+    daysElement.innerHTML = 0;
+    hoursElement.innerHTML = 0;
+    minutesElement.innerHTML = 0;
+    secondsElement.innerHTML = 0;
   }
 }, 1000);
