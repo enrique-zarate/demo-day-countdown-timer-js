@@ -28,7 +28,7 @@ const endsText = document.getElementById("ends-text");
 const deadline = document.getElementById("deadline");
 
 // create end date in English
-const endDate = new Date("21 Sep 2022 19:00:00");
+const endDate = new Date("21 Dec 2022 19:00:00");
 console.log(endDate);
 
 // extract end date text into variables
